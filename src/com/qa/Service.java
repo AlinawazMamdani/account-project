@@ -42,5 +42,11 @@ public static void jsonToMap(String json) {
    Gson gson = new Gson();
    map =(Map<String,Account>) gson.fromJson(json,map.getClass());
    System.out.println(gson.toJson(map));
+   map.
 }
+public static Object countName() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 }
