@@ -3,6 +3,8 @@ package com.qa;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
+import com.google.gson.Gson;
 public class Service {
 private static Map <String, Account> account = new HashMap<String, Account>();
 public static void insertDetails() {
@@ -22,5 +24,11 @@ public static void getDetails(String kv) {
 	System.out.println(accounty.getFirstName());
 	System.out.println(accounty.getLastName());
 	System.out.println(accounty.getAccountNumber());
+}
+public static void getJson(String kv) {
+	Account accounty=account.get(kv);
+	Gson gson = new Gson(); 
+	String json=gson.toJson(accounty);
+	System.out.println(json);
 }
 }
