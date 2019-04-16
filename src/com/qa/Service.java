@@ -31,4 +31,16 @@ public static void getJson(String kv) {
 	String json=gson.toJson(accounty);
 	System.out.println(json);
 }
+public static String getAllJson() {
+	Gson gson = new Gson(); 
+	String json=gson.toJson(account);
+	System.out.println(json);
+	return json;
+}
+public static void jsonToMap(String json) {
+   Map<String, Account> map= new HashMap<String, Account>();
+   Gson gson = new Gson();
+   map =(Map<String,Account>) gson.fromJson(json,map.getClass());
+   System.out.println(gson.toJson(map));
+}
 }
