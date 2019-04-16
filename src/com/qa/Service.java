@@ -44,8 +44,14 @@ public static void jsonToMap(String json) {
    System.out.println(gson.toJson(map));
 }
 public static int countName(String name) {
-	// TODO Auto-generated method stub
-	return 0;
+    //String json=getAllJson();
+    int nameCount=0;
+    for (Account a:account.values()) {	
+    	if (a.getFirstName()==name) {
+    		nameCount+=1;	
+    	}
+    }
+	return nameCount;
 }
 
 }
