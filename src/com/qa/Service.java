@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import com.google.gson.Gson;
 public class Service {
-private static Map <String, Account> account = new HashMap<String, Account>();
+public static Map <String, Account> account = new HashMap<String, Account>();
 public static void insertDetails() {
 	Scanner sc = new Scanner(System.in);
 	String firstName=sc.nextLine();
@@ -31,4 +31,27 @@ public static void getJson(String kv) {
 	String json=gson.toJson(accounty);
 	System.out.println(json);
 }
+public static String getAllJson() {
+	Gson gson = new Gson(); 
+	String json=gson.toJson(account);
+	System.out.println(json);
+	return json;
+}
+public static void jsonToMap(String json) {
+   Map<String, Account> map= new HashMap<String, Account>();
+   Gson gson = new Gson();
+   map =(Map<String,Account>) gson.fromJson(json,map.getClass());
+   System.out.println(gson.toJson(map));
+}
+public static int countName(String name) {
+    //String json=getAllJson();
+    int nameCount=0;
+    for (Account a:account.values()) {	
+    	if (a.getFirstName()==name) {
+    		nameCount+=1;	
+    	}
+    }
+	return nameCount;
+}
+
 }
