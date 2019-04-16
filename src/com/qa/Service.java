@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import com.google.gson.Gson;
 public class Service {
-private static Map <String, Account> account = new HashMap<String, Account>();
+public static Map <String, Account> account = new HashMap<String, Account>();
 public static void insertDetails() {
 	Scanner sc = new Scanner(System.in);
 	String firstName=sc.nextLine();
@@ -42,11 +42,10 @@ public static void jsonToMap(String json) {
    Gson gson = new Gson();
    map =(Map<String,Account>) gson.fromJson(json,map.getClass());
    System.out.println(gson.toJson(map));
-   map.
 }
-public static Object countName() {
+public static int countName() {
 	// TODO Auto-generated method stub
-	return null;
+	return 0;
 }
 
 }
